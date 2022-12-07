@@ -4,4 +4,4 @@
     entry: qmlfmt
     language: python
     types: [text]
-    files: '**/*.qml'
+    files: '.qml'
