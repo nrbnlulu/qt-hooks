@@ -4,4 +4,4 @@
     entry: qmlformatter
     language: python
     types: [text]
-    files: '.qml'
+    files: '(.*?)\.qml$'
