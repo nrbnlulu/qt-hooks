@@ -1,0 +1,54 @@
+[[package]]
+name = "pyside6"
+version = "6.4.1"
+description = "Python bindings for the Qt cross-platform application and UI framework"
+category = "main"
+optional = false
+python-versions = "<3.12,>=3.7"
+
+[package.dependencies]
+PySide6-Addons = "6.4.1"
+PySide6-Essentials = "6.4.1"
+shiboken6 = "6.4.1"
+
+[[package]]
+name = "pyside6-addons"
+version = "6.4.1"
+description = "Python bindings for the Qt cross-platform application and UI framework (Addons)"
+category = "main"
+optional = false
+python-versions = "<3.12,>=3.7"
+
+[package.dependencies]
+PySide6-Essentials = "6.4.1"
+shiboken6 = "6.4.1"
+
+[[package]]
+name = "pyside6-essentials"
+version = "6.4.1"
+description = "Python bindings for the Qt cross-platform application and UI framework (Essentials)"
+category = "main"
+optional = false
+python-versions = "<3.12,>=3.7"
+
+[package.dependencies]
+shiboken6 = "6.4.1"
+
+[[package]]
+name = "shiboken6"
+version = "6.4.1"
+description = "Python/C++ bindings helper module"
+category = "main"
+optional = false
+python-versions = "<3.12,>=3.7"
+
+[metadata]
+lock-version = "1.1"
+python-versions = ">=3.8,<3.11"
+content-hash = "189101d940b8003cd19482ff61522659890979147cb1242c6edb27f9e34de558"
+
+[metadata.files]
+pyside6 = []
+pyside6-addons = []
+pyside6-essentials = []
+shiboken6 = []

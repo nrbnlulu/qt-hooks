@@ -1,0 +1,7 @@
+-   id: qml-format
+    name: QML formatter.
+    description: This hook format .qml files.
+    entry: python qmlfmt.py
+    language: python
+    types: [text]
+    files: '**/*.qml'
