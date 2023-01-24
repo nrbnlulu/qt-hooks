@@ -1,0 +1,46 @@
+repos:
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.1.0
+    hooks:
+      - id: codespell
+        exclude: >
+            (?x)^(
+                .*\.css|
+                .*\.js|
+                \.tox
+            )$
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.34.0
+    hooks:
+      - id: pyupgrade
+        args: ["--py38-plus"]
+
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.0.186
+    hooks:
+      - id: ruff
+        exclude: >
+          (?x)^(
+              .*\.jinja.py|
+          )$
+
+  - repo: https://github.com/psf/black
+    rev: 22.6.0
+    hooks:
+      - id: black
+        args: ["--config", "pyproject.toml", "--target-version", "py310"]
+        exclude: >
+          (?x)^(
+              .*\.jinja.py|
+          )$
+
+
+  - repo: https://github.com/PyCQA/docformatter
+    rev: v1.5.1
+    hooks:
+      - id: docformatter
+
+  - repo: https://github.com/nrbnlulu/qt-pre-commit-hooks
+    rev: v0.1.1
+    hooks:
+      -  id: qml-format

@@ -1,4 +1,5 @@
 from setuptools import setup
 
-setup(name='qt_hooks',
+setup(
+    name="qt_hooks",
 )
