@@ -7,7 +7,7 @@ from pathlib import Path
 from qmlformatter.main import IS_WINDOWS
 
 
-@pytest.mark.skipif(IS_WINDOWS)
+@pytest.mark.skipif(IS_WINDOWS, "no dll's bundled currently")
 def test_formats():
     sample_qml = Path(__file__).parent / 'sample.qml'
     assert sample_qml.exists()
