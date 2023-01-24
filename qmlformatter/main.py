@@ -7,6 +7,9 @@ import argparse
 import os
 
 def main():
+    if 'Windows' in platform.platform():
+        print("windows not is not supported yet.")
+        return
     shared_o = Path(__file__).parent / 'lib'
     shared_o.resolve(True)
     os.chdir(shared_o)
