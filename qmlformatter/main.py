@@ -12,13 +12,13 @@ def main():
         return
     shared_o = Path(__file__).parent / 'lib'
     shared_o.resolve(True)
-    os.chdir(shared_o)
 
-    qmlformat = 'qmlformat'
+    qmlformat = 'qmlformat.so'
     if IS_WINDOWS:
         qmlformat += '.exe'
-    qml_format = Path(__file__).parent / qmlformat
+    qml_format = Path(__file__).parent / 'lib'/ qmlformat
     assert qml_format.exists()
+    os.chdir(shared_o)
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="*")
     args = parser.parse_args()
