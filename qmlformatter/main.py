@@ -1,16 +1,20 @@
+import glob
 import platform
 import sys
 from pathlib import Path
 from subprocess import Popen
 import argparse
-import PySide6
-
+import os
 
 def main():
+    shared_o = Path(__file__).parent / 'lib'
+    shared_o.resolve(True)
+    os.chdir(shared_o)
+
     qmlformat = 'qmlformat'
     if platform.system() == 'Windows':
         qmlformat += '.exe'
-    qml_format = Path(PySide6.__file__).parent / qmlformat
+    qml_format = Path(__file__).parent / qmlformat
     assert qml_format.exists()
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="*")
