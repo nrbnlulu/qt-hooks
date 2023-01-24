@@ -4,6 +4,10 @@ import pytest
 from qmlformatter import main
 from pathlib import Path
 
+from qmlformatter.main import IS_WINDOWS
+
+
+@pytest.mark.skipif(IS_WINDOWS)
 def test_formats():
     sample_qml = Path(__file__).parent / 'sample.qml'
     assert sample_qml.exists()

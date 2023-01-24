@@ -5,9 +5,9 @@ from pathlib import Path
 from subprocess import Popen
 import argparse
 import os
-
+IS_WINDOWS = platform.system() == 'Windows'
 def main():
-    if 'Windows' in platform.platform():
+    if IS_WINDOWS:
         print("windows not is not supported yet.")
         return
     shared_o = Path(__file__).parent / 'lib'
@@ -15,7 +15,7 @@ def main():
     os.chdir(shared_o)
 
     qmlformat = 'qmlformat'
-    if platform.system() == 'Windows':
+    if IS_WINDOWS:
         qmlformat += '.exe'
     qml_format = Path(__file__).parent / qmlformat
     assert qml_format.exists()
