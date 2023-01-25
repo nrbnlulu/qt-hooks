@@ -25,7 +25,7 @@ def main():
     parser.add_argument("filenames", nargs="*")
     args = parser.parse_args()
     files = args.filenames
-    files = [str(Path(file).resolve(True)) for file in files]
+    files = [str((Path.cwd() / file).resolve(True)) for file in files]
     p = Popen(args=[str(qml_format), *files, "--inplace"])
     p.wait(2000)
     while p.poll() is None:
