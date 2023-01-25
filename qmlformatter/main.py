@@ -20,12 +20,11 @@ def main():
         qmlformat += ".exe"
     qml_format = Path(__file__).parent / "lib" / qmlformat
     assert qml_format.exists()
-    os.chdir(shared_o)
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="*")
     args = parser.parse_args()
     files = args.filenames
-    files = [str((Path.cwd() / file).resolve(True)) for file in files]
+    files = [str(Path(file).resolve(True)) for file in files]
     p = Popen(args=[str(qml_format), *files, "--inplace"])
     p.wait(2000)
     while p.poll() is None:
